@@ -1,0 +1,42 @@
+.w-100 {
+    width:100% !important;
+}
+
+b {
+    color:$primary-color;
+}
+
+a {
+    text-decoration: none;
+    color:#a6a5ab;
+}
+
+.container-all {
+    margin:20px;
+    width:100%;
+}
+
+.box-area {
+    border-radius:8px;
+    box-shadow: 1px 0px 13px -2px rgba(0,0,0,0.03);
+    -webkit-box-shadow: 1px 0px 13px -2px rgba(0,0,0,0.03);
+    -moz-box-shadow: 1px 0px 13px -2px rgba(0,0,0,0.03);
+    padding:20px;
+    background:white;
+}
+
+.mr-2 {
+    margin-right:1em;
+}
+
+.ml-1 {
+    margin-left:0.3em;
+}
+
+.ml-2 {
+    margin-left:1em;
+}
+
+.c-pointer {
+    cursor: pointer;
+}  
