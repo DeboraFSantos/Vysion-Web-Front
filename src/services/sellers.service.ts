@@ -14,7 +14,7 @@ async function getSellers(queryParams?: Record<string, any>): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -28,7 +28,7 @@ async function createSeller(body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -41,7 +41,7 @@ async function getSellerById(sellerId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -59,7 +59,7 @@ async function getSellerByEmail(queryParams?: Record<string, any>): Promise<any>
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -73,7 +73,7 @@ async function updateSeller(sellerId: string, body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -86,7 +86,7 @@ async function deleteSeller(sellerId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 

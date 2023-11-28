@@ -13,7 +13,7 @@ export const useCategoryStore = defineStore({
         
         return categories;
       } catch (error) {
-        console.error('Erro ao listar categorias:', error);
+        return undefined;
       }
     },
     async createCategory(body:any) {
@@ -22,9 +22,7 @@ export const useCategoryStore = defineStore({
         
         return categories;
       } catch (error) {
-        console.error('Erro ao criar categoria:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getCategoryById(id:string) {
@@ -33,9 +31,7 @@ export const useCategoryStore = defineStore({
         
         return category;
       } catch (error) {
-        console.error('Erro ao obter o categoria com ID:', error);
-
-        return error;
+        return undefined;
       }
     },
     async updateCategory(id:string, body:any) {
@@ -44,16 +40,14 @@ export const useCategoryStore = defineStore({
         
         return category;
       } catch (error) {
-        console.error('Erro ao atualizar o categoria:', error);
-
-        return error;
+        return undefined;
       }
     },
     async deleteCategory(id:string) {
       try {
         return await deleteCategory(id);
       } catch (error) {
-        return error;
+        return undefined;
       }
     }
   },

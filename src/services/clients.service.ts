@@ -14,7 +14,7 @@ async function getClients(queryParams?: Record<string, any>): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -28,7 +28,7 @@ async function createClient(body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -41,7 +41,7 @@ async function getClientById(clientId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -55,7 +55,7 @@ async function updateClient(clientId: string, body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -68,7 +68,7 @@ async function deleteClient(clientId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 

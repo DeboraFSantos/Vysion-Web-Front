@@ -221,11 +221,9 @@ const exportFile = async () => {
 
             isExportLoading.value = false;
         } else {
-            console.error('Erro ao exportar vendas:', response.statusText);
             isExportLoading.value = false;
         }
     } catch (error) {
-        console.error('Erro ao exportar vendas:', error);
         isExportLoading.value = false;
     }
 };

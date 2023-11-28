@@ -14,7 +14,7 @@ async function getProducts(queryParams?: Record<string, any>): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -28,7 +28,7 @@ async function createProduct(body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -41,7 +41,7 @@ async function getProductById(productId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -55,7 +55,7 @@ async function updateProduct(productId: string, body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -68,7 +68,7 @@ async function deleteProduct(productId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 

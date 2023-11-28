@@ -14,7 +14,7 @@ async function getPaymentMethods(queryParams?: Record<string, any>): Promise<any
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -28,7 +28,7 @@ async function createPaymentMethod(body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -41,7 +41,7 @@ async function getPaymentMethodById(paymentMethodId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -55,7 +55,7 @@ async function updatePaymentMethod(paymentMethodId: string, body: any): Promise<
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -68,7 +68,7 @@ async function deletePaymentMethod(paymentMethodId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 

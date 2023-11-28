@@ -63,7 +63,8 @@ import { useSellerStore } from '@/stores/sellers.js'
 
 const login = reactive({
   email: '',
-  password: ''
+  password: '',
+  name: ''
 })
 
 const isLoading = ref(false);
@@ -149,6 +150,27 @@ const loginUser = async () => {
   }
 }
 
+const createSeller = async (bodyInfo:any) => {
+    isLoading.value = true;
+
+    sellerStore.createSeller(bodyInfo)
+    .then((response) => {
+        isLoading.value = false;
+
+        localStorage.setItem('userRole', JSON.stringify(response));
+        localStorage.setItem('currentUser', JSON.stringify(response));
+    })
+    .catch((error) => {
+        isLoading.value = false;
+
+        iziToast.error({
+            title: 'Erro:',
+            message: 'Erro ao criar vendedor',
+            position: 'bottomCenter'
+        })
+    })
+}
+
 const signInWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
   try {
@@ -158,21 +180,26 @@ const signInWithGoogle = async () => {
       const token = await auth.currentUser.getIdToken();
       localStorage.setItem('token', token);
 
+      const newUser = {
+        name: auth.currentUser.displayName,
+        email: auth.currentUser.email
+      }
+
+      localStorage.setItem('currentUser', JSON.stringify(newUser));
+
       sellerStore.getSellerByEmail({
         email: userEmail
       })
       .then((response) => {
-        localStorage.setItem('currentUser', JSON.stringify(response));
-
-        isLoading.value = false;
-        router.push('/summary');
-      })
-      .catch((error) => {
-        iziToast.error({
-          title: 'Erro:',
-          message: 'Usuário não encontrado',
-          position: 'bottomCenter'
-        })
+        if(response != undefined){
+          localStorage.setItem('currentUser', JSON.stringify(response));
+          isLoading.value = false;
+          router.push('/summary');
+        } else {
+          createSeller(newUser);
+          isLoading.value = false;
+          router.push('/summary');
+        }
       })
   }
   catch(error: any) {

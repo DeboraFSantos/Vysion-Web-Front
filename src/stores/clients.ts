@@ -13,7 +13,7 @@ export const useClientStore = defineStore({
         
         return clients;
       } catch (error) {
-        console.error('Erro ao listar clientes:', error);
+        return undefined;
       }
     },
     async createClient(body:any) {
@@ -22,9 +22,7 @@ export const useClientStore = defineStore({
         
         return clients;
       } catch (error) {
-        console.error('Erro ao criar cliente:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getClientById(id:string) {
@@ -33,9 +31,7 @@ export const useClientStore = defineStore({
         
         return client;
       } catch (error) {
-        console.error('Erro ao obter o cliente com ID:', error);
-
-        return error;
+        return undefined;
       }
     },
     async updateClient(id:string, body:any) {
@@ -44,16 +40,14 @@ export const useClientStore = defineStore({
         
         return client;
       } catch (error) {
-        console.error('Erro ao atualizar o cliente:', error);
-
-        return error;
+        return undefined;
       }
     },
     async deleteClient(id:string) {
       try {
         return await deleteClient(id);
       } catch (error) {
-        return error;
+        return undefined;
       }
     }
   },

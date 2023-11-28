@@ -13,9 +13,7 @@ export const useProductStore = defineStore({
         
         return products;
       } catch (error) {
-        console.error('Erro ao listar produtos:', error);
-
-        return error;
+        return undefined;
       }
     },
     async createProduct(body:any) {
@@ -24,9 +22,7 @@ export const useProductStore = defineStore({
         
         return products;
       } catch (error) {
-        console.error('Erro ao criar produto:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getProductById(id:string) {
@@ -35,9 +31,7 @@ export const useProductStore = defineStore({
         
         return product;
       } catch (error) {
-        console.error('Erro ao obter o produto com ID:', error);
-
-        return error;
+        return undefined;
       }
     },
     async updateProduct(id:string, body:any) {
@@ -46,16 +40,14 @@ export const useProductStore = defineStore({
         
         return product;
       } catch (error) {
-        console.error('Erro ao atualizar o produto:', error);
-
-        return error;
+        return undefined;
       }
     },
     async deleteProductById(id:string) {
       try {
         return await deleteProduct(id);
       } catch (error) {
-        return error;
+        return undefined;
       }
     }
   },

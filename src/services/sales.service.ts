@@ -14,7 +14,7 @@ async function getSales(queryParams?: Record<string, any>): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -32,7 +32,7 @@ async function getTotalSalesStatistics(queryParams?: Record<string, any>): Promi
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -50,7 +50,7 @@ async function getTopSellerRanking(queryParams?: Record<string, any>): Promise<a
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -68,7 +68,7 @@ async function getTopBuyingClients(queryParams?: Record<string, any>): Promise<a
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -86,7 +86,7 @@ async function getTopSoldProducts(queryParams?: Record<string, any>): Promise<an
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -104,7 +104,7 @@ async function getTopSoldCategories(queryParams?: Record<string, any>): Promise<
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -118,7 +118,7 @@ async function createSale(body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -131,7 +131,7 @@ async function getSaleById(saleId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -145,7 +145,7 @@ async function updateSale(saleId: string, body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -158,7 +158,7 @@ async function deleteSale(saleId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -171,7 +171,7 @@ async function getExportFile(): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 

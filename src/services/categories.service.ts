@@ -14,7 +14,7 @@ async function getCategories(queryParams?: Record<string, any>): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -28,7 +28,7 @@ async function createCategory(body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -41,7 +41,7 @@ async function getCategoryById(categoryId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -55,7 +55,7 @@ async function updateCategory(categoryId: string, body: any): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 
@@ -68,7 +68,7 @@ async function deleteCategory(categoryId: string): Promise<any> {
         });
         return response;
     } catch (error) {
-        throw error;
+        return undefined;
     }
 }
 

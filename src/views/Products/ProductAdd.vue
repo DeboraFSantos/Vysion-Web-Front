@@ -165,8 +165,6 @@ const createProduct = async () => {
 
     body.price = body.price.replace(/[R$.]/g, "");
 
-    console.log(body)
-
     if(result){
         productStore.createProduct(body)
         .then((response) => {

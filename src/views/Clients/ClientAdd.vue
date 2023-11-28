@@ -119,9 +119,7 @@ const createClient = async () => {
     isLoading.value = true;
 
     const result = await v$.value.$validate();
-
-    console.log(body)
-
+    
     if(result){
         clientStore.createClient(body)
         .then((response) => {

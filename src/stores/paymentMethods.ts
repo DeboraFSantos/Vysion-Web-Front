@@ -13,7 +13,7 @@ export const usePaymentMethodStore = defineStore({
         
         return paymentMethods;
       } catch (error) {
-        console.error('Erro ao listar paymentMethodes:', error);
+        return undefined;
       }
     },
     async createPaymentMethod(body:any) {
@@ -22,9 +22,7 @@ export const usePaymentMethodStore = defineStore({
         
         return paymentMethods;
       } catch (error) {
-        console.error('Erro ao criar paymentMethode:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getPaymentMethodById(id:string) {
@@ -33,9 +31,7 @@ export const usePaymentMethodStore = defineStore({
         
         return paymentMethod;
       } catch (error) {
-        console.error('Erro ao obter o paymentMethode com ID:', error);
-
-        return error;
+        return undefined;
       }
     },
     async updatePaymentMethod(id:string, body:any) {
@@ -44,16 +40,14 @@ export const usePaymentMethodStore = defineStore({
         
         return paymentMethod;
       } catch (error) {
-        console.error('Erro ao atualizar o paymentMethode:', error);
-
-        return error;
+        return undefined;
       }
     },
     async deletePaymentMethod(id:string) {
       try {
         return await deletePaymentMethod(id);
       } catch (error) {
-        return error;
+        return undefined;
       }
     }
   },

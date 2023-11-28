@@ -33,7 +33,6 @@ class BaseService {
 
             return await response.json();
         } catch (error) {
-            console.error('Erro na requisição:', error);
             throw error;
         }
     }
@@ -50,7 +49,6 @@ class BaseService {
             const accessToken: string = await user.getIdToken(/* forceRefresh = */ true);
             localStorage.setItem('token', accessToken);
         } catch (error) {
-            console.error('Erro ao renovar o token:', error);
             throw error;
         }
     }

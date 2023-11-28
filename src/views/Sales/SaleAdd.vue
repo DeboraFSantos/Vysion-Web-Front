@@ -251,9 +251,6 @@ const createSale = async () => {
     // @ts-ignore
     body.commissionForSeller = Number(body.commissionForSeller);
 
-    console.log(productList.value)
-    console.log(productQuantity.value)
-
     if(productList.value.length === 0 && productQuantity.length === undefined) {
         isLoading.value = false;
         return iziToast.error({
@@ -266,8 +263,6 @@ const createSale = async () => {
     if(result){
         body.products = productList.value.map((product:any) => product.id)
         body.productQuantity = productQuantity;
-
-        console.log(body)
 
         saleStore.createSale(body)
         .then((response) => {
@@ -314,7 +309,8 @@ const sellersList = ref([]);
 const getSellers = () => {
     sellersStores.getSellers(parameters)
     .then((response) => {
-        sellersList.value = response.users;
+        const activeSellers = response.users.filter((user:any) => user.role !== 'user');
+        sellersList.value = activeSellers;
     })
 }
 
@@ -336,7 +332,8 @@ const productListAll = ref([])
 const getProducts = () => {
     productsStore.getProducts(parameters)
     .then((response) => {
-        productListAll.value = response.products;
+        const activeProducts = response.products.filter((product:any) => product.isActive);
+        productListAll.value = activeProducts;
     })
 }
 
@@ -377,9 +374,6 @@ const productList: any = ref([]);
 const productQuantity:any = reactive({});
 
 const addProduct = (product: any | null) => {    
-
-    console.log(product)
-
     if (product !== undefined && product !== null) {
         if (!productQuantity[product.id]) {
             productList.value.push(

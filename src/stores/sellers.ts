@@ -13,7 +13,7 @@ export const useSellerStore = defineStore({
         
         return sellers;
       } catch (error) {
-        console.error('Erro ao listar vendedores:', error);
+        return undefined;
       }
     },
     async getSellerByEmail(queryParams:any) {
@@ -22,7 +22,7 @@ export const useSellerStore = defineStore({
         
         return sellers;
       } catch (error) {
-        console.error('Erro ao listar vendedores:', error);
+        return undefined;
       }
     },
     async createSeller(body:any) {
@@ -31,9 +31,7 @@ export const useSellerStore = defineStore({
         
         return sellers;
       } catch (error) {
-        console.error('Erro ao criar vendedor:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getSellerById(id:string) {
@@ -42,9 +40,7 @@ export const useSellerStore = defineStore({
         
         return seller;
       } catch (error) {
-        console.error('Erro ao obter o vendedor com ID:', error);
-
-        return error;
+        return undefined;
       }
     },
     async updateSeller(id:string, body:any) {
@@ -53,16 +49,14 @@ export const useSellerStore = defineStore({
         
         return seller;
       } catch (error) {
-        console.error('Erro ao atualizar o vendedor:', error);
-
-        return error;
+        return undefined;
       }
     },
     async deleteSeller(id:string) {
       try {
         return await deleteSeller(id);
       } catch (error) {
-        return error;
+        return undefined;
       }
     }
   },

@@ -187,8 +187,6 @@ const updateProduct = async () => {
         editable.price = editable.price.replace(/[R$.]/g, "");
     }
 
-    console.log(editable)
-
     if(result){
         productStore.updateProduct(productId, JSON.stringify(editable))
         .then((response) => {

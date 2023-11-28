@@ -13,9 +13,7 @@ export const useSaleStore = defineStore({
         
         return sales;
       } catch (error) {
-        console.error('Erro ao listar vendas:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getTotalSalesStatistics(queryParams:any) {
@@ -24,9 +22,7 @@ export const useSaleStore = defineStore({
         
         return sales;
       } catch (error) {
-        console.error('Erro ao listar estatísticas:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getTopSellerRanking(queryParams:any) {
@@ -35,9 +31,7 @@ export const useSaleStore = defineStore({
         
         return sales;
       } catch (error) {
-        console.error('Erro ao listar estatísticas:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getTopBuyingClients(queryParams:any) {
@@ -46,9 +40,7 @@ export const useSaleStore = defineStore({
         
         return sales;
       } catch (error) {
-        console.error('Erro ao listar estatísticas:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getTopSoldProducts(queryParams:any) {
@@ -57,9 +49,7 @@ export const useSaleStore = defineStore({
         
         return sales;
       } catch (error) {
-        console.error('Erro ao listar estatísticas:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getTopSoldCategories(queryParams:any) {
@@ -68,9 +58,7 @@ export const useSaleStore = defineStore({
         
         return sales;
       } catch (error) {
-        console.error('Erro ao listar estatísticas:', error);
-
-        return error;
+        return undefined;
       }
     },
     async createSale(body:any) {
@@ -79,9 +67,7 @@ export const useSaleStore = defineStore({
         
         return sales;
       } catch (error) {
-        console.error('Erro ao criar venda:', error);
-
-        return error;
+        return undefined;
       }
     },
     async getSaleById(id:string) {
@@ -90,9 +76,7 @@ export const useSaleStore = defineStore({
         
         return sale;
       } catch (error) {
-        console.error('Erro ao obter o venda com ID:', error);
-
-        return error;
+        return undefined;
       }
     },
     async updateSale(id:string, body:any) {
@@ -101,23 +85,21 @@ export const useSaleStore = defineStore({
         
         return sale;
       } catch (error) {
-        console.error('Erro ao atualizar o venda:', error);
-
-        return error;
+        return undefined;
       }
     },
     async deleteSale(id:string) {
       try {
         return await deleteSale(id);
       } catch (error) {
-        return error;
+        return undefined;
       }
     },
     async getExportFile() {
       try {
         return await getExportFile();
       } catch (error) {
-        return error;
+        return undefined;
       }
     }
   },

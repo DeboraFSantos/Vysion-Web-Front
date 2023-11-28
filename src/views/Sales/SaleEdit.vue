@@ -245,15 +245,13 @@ const createSale = async () => {
     if(result){
         editable.products = productList.value.map((product:any) => product.id)
         editable.productQuantity = productQuantity;
-
-        console.log(editable)
-
+        
         saleStore.createSale(editable)
         .then((response) => {
             isLoading.value = false;
 
             iziToast.success({
-                title: 'Venda criada com sucesso',
+                title: 'Venda editada com sucesso',
                 position: 'bottomCenter'
             })
 
