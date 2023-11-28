@@ -20,6 +20,7 @@
               >
                 <input 
                   v-model="login.name"
+                  autocomplete="on"
                 />
               </InputComponent>
               <InputComponent 
@@ -30,12 +31,14 @@
                 <input 
                   type="email"
                   v-model="login.email"
+                  autocomplete="on"
                 />
               </InputComponent>
               <InputComponent label-name="Senha">
                 <input 
                   type="password"
                   v-model="login.password"
+                  autocomplete="on"
                 />
               </InputComponent>
               <button class="primary w-100 mt-3 mb-4" type="submit">

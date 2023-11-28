@@ -162,6 +162,7 @@ const exportFile = async () => {
             headers['Authorization'] = `Bearer ${token}`;
         }
 
+        // @ts-ignore
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/clients/export`, {
         headers: headers,
         responseType: 'blob' 

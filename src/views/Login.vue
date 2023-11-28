@@ -21,12 +21,14 @@
                 <input 
                   type="email"
                   v-model="login.email"
+                  autocomplete="on"
                 />
               </InputComponent>
               <InputComponent label-name="Senha">
                 <input 
                   type="password"
                   v-model="login.password"
+                  autocomplete="on"
                 />
               </InputComponent>
               <button class="primary w-100 mt-3 mb-4" type="submit">
@@ -99,15 +101,17 @@ const loginUser = async () => {
     .then((response) => {
       localStorage.setItem('currentUser', JSON.stringify(response));
 
-      isLoading.value = false;
-      router.push('/summary');
-    })
-    .catch((error) => {
-      iziToast.error({
-        title: 'Erro:',
-        message: 'Usuário não encontrado',
-        position: 'bottomCenter'
-      })
+      if(response !== undefined) {
+        isLoading.value = false;
+        router.push('/summary');
+      } else {
+        isLoading.value = false;
+        iziToast.error({
+          title: 'Erro:',
+          message: 'Usuário não encontrado',
+          position: 'bottomCenter'
+        })
+      }
     })
   }
   catch(error: any) {

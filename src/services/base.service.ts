@@ -3,6 +3,7 @@ import { getAuth } from 'firebase/auth';
 
 class BaseService {
     private get api(): string {
+        // @ts-ignore
         return import.meta.env.VITE_BASE_URL as string;
     }
 

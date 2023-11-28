@@ -75,7 +75,7 @@
                 <button class="default mr-2">Cancelar</button>
             </router-link>
             <button class="primary" @click="createClient">
-                <font-awesome-icon icon="spinner" class="icon-login" v-if="isLoading"/> 
+                <font-awesome-icon icon="spinner" class="icon-loading" v-if="isLoading"/> 
                 Salvar
             </button>
 

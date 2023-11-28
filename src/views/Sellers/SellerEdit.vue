@@ -97,7 +97,7 @@
         <div class="d-flex justify-content-end mt-4">
             <button class="default mr-2">Cancelar</button>
             <button class="primary" @click="updateSeller">
-                <font-awesome-icon icon="spinner" class="icon-login" v-if="isLoading"/> 
+                <font-awesome-icon icon="spinner" class="icon-loading" v-if="isLoading"/> 
                 Salvar
             </button>
         </div>

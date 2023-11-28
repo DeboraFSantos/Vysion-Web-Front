@@ -94,6 +94,7 @@
     const allMobileMenuContainer = document.querySelector('.all-menu-mobile');
 
     if(isMobileMenuOpen.value){
+      // @ts-ignore
         allMobileMenuContainer.style.display = 'block';
     }
   };
@@ -115,6 +116,7 @@
       
       if (mobileMenuContainer && !mobileMenuContainer.contains(target)) {
         isMobileMenuOpen.value = false;
+        // @ts-ignore
         allMobileMenuContainer.style.display = 'none';
       }
     }

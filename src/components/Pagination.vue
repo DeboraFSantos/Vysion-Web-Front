@@ -2,7 +2,8 @@
     <div>
         <div class="table-pagination flex">
             <div class="itemsToShow">
-                <select v-model="itemsPerPage" @change="changeItemsPerPage($event.target.value)">
+
+                <select v-model="itemsPerPage" @change="changeItemsPerPage">
                     <option v-for="option in perPageOptions" :key="option" :value="option">
                         {{ option }}
                     </option>
@@ -45,6 +46,7 @@
     
     const itemsPerPage = ref(props.perPage);
     
+    // @ts-ignore
     const totalPages = computed(() => Math.ceil(props.totalItems / itemsPerPage.value));
     
     const perPageOptions = [5, 10, 15, 20];
@@ -55,7 +57,9 @@
     }
     
     const paginatedItems = computed(() => {
+         // @ts-ignore
         const startIndex = (currentPage.value - 1) * itemsPerPage.value;
+         // @ts-ignore
         const endIndex = startIndex + itemsPerPage.value;
         return items.value.slice(startIndex, endIndex);
     });
@@ -103,9 +107,11 @@
         emit('previousPage', currentPage.value); 
     };
 
-    const changeItemsPerPage = (selectedValue: any) => {
-        itemsPerPage.value = selectedValue; 
-        emit('changePerPage', itemsPerPage.value); 
+    // @ts-ignore
+    const changeItemsPerPage = (event: Event) => {
+        const selectedValue = (event.target as HTMLSelectElement).value;
+        itemsPerPage.value = parseInt(selectedValue, 10);
+        emit('changePerPage', itemsPerPage.value);
     };
 </script>
 

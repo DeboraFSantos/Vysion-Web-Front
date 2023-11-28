@@ -146,6 +146,7 @@ const exportFile = async () => {
             headers['Authorization'] = `Bearer ${token}`;
         }
 
+        // @ts-ignore
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/paymentMethods/export`, {
         headers: headers,
         responseType: 'blob' 

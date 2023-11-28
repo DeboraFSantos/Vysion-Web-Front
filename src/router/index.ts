@@ -31,6 +31,7 @@ import iziToast from 'izitoast'
 import { helpers } from '@/utils/helpers'
 
 const router = createRouter({
+  // @ts-ignore
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {

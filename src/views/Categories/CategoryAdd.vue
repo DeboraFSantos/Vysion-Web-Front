@@ -49,7 +49,7 @@
                 <button class="default mr-2">Cancelar</button>
             </router-link>
             <button class="primary" @click="createCategory">
-                <font-awesome-icon icon="spinner" class="icon-login" v-if="isLoading"/> 
+                <font-awesome-icon icon="spinner" class="icon-loading" v-if="isLoading"/> 
                 Salvar
             </button>
 
@@ -88,8 +88,6 @@ const createCategory = async () => {
     isLoading.value = true;
 
     const result = await v$.value.$validate();
-
-    console.log(body)
 
     if(result){
         categoryStore.createCategory(body)

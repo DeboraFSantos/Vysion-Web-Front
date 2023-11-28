@@ -48,12 +48,12 @@ import { ref, reactive } from 'vue';
 import { useSaleStore } from '@/stores/sales.js'
 import { helpers } from '@/utils/helpers'
 import Loading from '@/components/Loading.vue'
-
+import dayjs from 'dayjs'
 const saleStore = useSaleStore();
 
 const parameters = reactive({
-    startDate:'2023-11-10',
-    endDate:'2023-11-22'
+    startDate:dayjs().subtract(6, 'day').format('YYYY-MM-DD'),
+    endDate:dayjs().add(1, 'day').format('YYYY-MM-DD')
 })
 
 const totalSales = ref();

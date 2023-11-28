@@ -97,7 +97,7 @@
         <div class="d-flex justify-content-end mt-4">
             <button class="default mr-2">Cancelar</button>
             <button class="primary" @click="createProduct">
-                <font-awesome-icon icon="spinner" class="icon-login" v-if="isLoading"/> 
+                <font-awesome-icon icon="spinner" class="icon-loading" v-if="isLoading"/> 
                 Salvar
             </button>
         </div>
@@ -211,7 +211,8 @@ const categoriesList = ref([]);
 const getCategories = () => {
     categoryStore.getCategories(parameters)
     .then((response) => {
-        categoriesList.value = response.categories;
+        const activeCategories = response.categories.filter((cat:any) => cat.isActive);
+        categoriesList.value = activeCategories;
     })
 }
 

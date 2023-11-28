@@ -188,7 +188,6 @@ import VueMultiselect from 'vue-multiselect'
 import iziToast from 'izitoast';
 import router from '@/router';
 import { vMaska } from "maska"
-import { getSaleById } from '@/services/sales.service';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
