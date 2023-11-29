@@ -113,7 +113,7 @@
                                     {{product.name}}
                                 </td>
                                 <td data-th="Preço">
-                                    {{product.price}}
+                                    {{helpers.centsToReal(product.price)}}
                                 </td>
                                 <td data-th="Categoria">
                                     {{product?.category}}
@@ -205,6 +205,7 @@ import iziToast from 'izitoast';
 import router from '@/router';
 import { vMaska } from "maska"
 import { usePaymentMethodStore } from '@/stores/paymentMethods.js'
+import { helpers } from '@/utils/helpers'
 
 const paymentMethodStore = usePaymentMethodStore();
 const paymentMethodsList = ref([]);
