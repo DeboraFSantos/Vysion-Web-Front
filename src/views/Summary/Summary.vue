@@ -52,7 +52,7 @@ import dayjs from 'dayjs'
 const saleStore = useSaleStore();
 
 const parameters = reactive({
-    startDate:dayjs().subtract(6, 'day').format('YYYY-MM-DD'),
+    startDate:dayjs().subtract(60, 'day').format('YYYY-MM-DD'),
     endDate:dayjs().add(1, 'day').format('YYYY-MM-DD')
 })
 
@@ -114,7 +114,7 @@ const totalSalesChartOptions = {
         width: 2
     },
     title: {
-        text: 'Vendas na última semana',
+        text: 'Vendas nos últimos meses',
         align: 'left'
     },
     grid: {
@@ -173,7 +173,7 @@ const topSellerRankingChartOptions = {
         height: 350
     },
     title: {
-        text: 'Top vendedores da semana',
+        text: 'Top vendedores dos últimos meses',
         align: 'left'
     },
     plotOptions: {
@@ -234,7 +234,7 @@ const topBuyingClientsChartOptions = {
         height: 350
     },
     title: {
-        text: 'Top clientes da semana',
+        text: 'Top clientes dos últimos meses',
         align: 'left'
     },
     plotOptions: {
@@ -302,7 +302,7 @@ const TopSoldProductsChartOptions = {
         }
     },
     title: {
-        text: 'Top produtos da semana',
+        text: 'Top produtos dos últimos meses',
         align: 'left'
     },
     dataLabels: {
@@ -386,7 +386,7 @@ const TopSoldCategoriesChartOptions = {
         }
     },
     title: {
-        text: 'Top categorias da semana',
+        text: 'Top categorias dos últimos meses',
         align: 'left'
     },
     dataLabels: {
